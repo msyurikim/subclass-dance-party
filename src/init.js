@@ -27,12 +27,17 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    console.log(dancerMakerFunction);
     $('body').append(dancer.$node);
+    console.log(dancer);
+    console.log(dancer.$node);
     window.dancers.push(dancer);
+    console.log(dancers);
   });
   $('.lineUp').on('click', function(event) {
     for(var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].lineUp();
+      console.log(window.dancers[i]);
+      console.log(window.dancers[i].lineUp());
     }
   });
 

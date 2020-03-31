@@ -1,5 +1,6 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, timeBetweenSteps);
+  var node = $('<img class="blinkyDancer" src="ballerina.png" alt="ballerina">');
+  Dancer.call(this, top, left, timeBetweenSteps, node);
 };
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
