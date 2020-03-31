@@ -5,6 +5,10 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
+  this.step();
+
+  this.setPosition(this.top, this.left);
+
 };
 
 Dancer.prototype.step = function() {
@@ -26,9 +30,9 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
-Dancer.prototype.initCalls = function() {
-  this.step();
-  // this one sets the position to some random default point within the body
-  this.setPosition(this.top, this.left);
-};
-//called inside blinkyDancerSpec.js
+// Dancer.prototype.initCalls = function() {
+//   // this.step();
+//   // this one sets the position to some random default point within the body
+//   // this.setPosition(this.top, this.left);
+// };
+// //called inside blinkyDancerSpec.js
