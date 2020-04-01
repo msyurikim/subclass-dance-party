@@ -73,11 +73,5 @@ $(document).ready(function() {
       closeDancers[key].$node.toggle();
     }
   });
-
-  // $('.blinkyDancer').mouseover(function(){
-  //     $('.blinkyDancer').css("max-width", "20%");
-  //   });
-
-
 });
 

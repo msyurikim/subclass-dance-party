@@ -6,14 +6,22 @@ var FadingDancer = function(top, left, timeBetweenSteps) {
 FadingDancer.prototype = Object.create(Dancer.prototype);
 FadingDancer.prototype.constructor = FadingDancer;
 
-FadingDancer.prototype.oldStep = function () {
-  Dancer.prototype.step.call(this);
+// FadingDancer.prototype.oldStep = function () {
+//   Dancer.prototype.step.call(this);
 
-};
+// };
 
 FadingDancer.prototype.step = function() {
-  this.oldStep();
+  //this.oldStep();
+  Dancer.prototype.step.call(this);
   this.$node.fadeOut();
   this.$node.delay();
   this.$node.fadeIn();
+  //this.bounce();
 };
+
+// FadingDancer.prototype.bounce = function() {
+//   this.$node.toggle("bounce", {times:3}, 300 );
+//   console.log(this.$node);
+// };
+

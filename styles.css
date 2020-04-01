@@ -47,9 +47,22 @@ img {
 .rightyDancer{
   position:absolute;
 }
-.fadingDancer{
-  position:absolute;
-}
 .blinkyDancer{
   position:absolute;
+}
+.fadingDancer{
+  position:absolute;
+
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+
+/* .bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+} */
+@keyframes bounce-1 {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-100px); }
+  100% { transform: translateY(0); }
 }
