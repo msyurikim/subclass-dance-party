@@ -27,19 +27,57 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    console.log(dancerMakerFunction);
     $('body').append(dancer.$node);
-    console.log(dancer);
-    console.log(dancer.$node);
     window.dancers.push(dancer);
-    console.log(dancers);
   });
+
   $('.lineUp').on('click', function(event) {
     for(var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp();
+    }
+    for(var i = 0; i < window.dancers.length; i++) {
       console.log(window.dancers[i]);
-      console.log(window.dancers[i].lineUp());
+      console.log(this);
     }
   });
+
+  for(var i = 0; i < window.dancers.length; i++) {
+    console.log(window.dancers[i]);
+    console.log(this);
+  }
+
+  //effect on all dancers, find n closest dancers, only first dancer
+  $('.lineUpIfClose').on('click', function(event) {
+    var closeDancers = {};
+    var top1 = window.dancers[0].top;
+    var left1 = window.dancers[0].left;
+    for(var i = 1; i < window.dancers.length; i++) {
+      var top2 = window.dancers[i].top;
+      var left2 = window.dancers[i].left;
+      var left = left1 - left2;
+      var top = top1 - top2;
+      var distance = Math.floor(Math.sqrt(Math.pow(left, 2) + Math.pow(top, 2)));
+      closeDancers[distance] = window.dancers[i];
+    }
+    console.log(Object.keys(closeDancers));
+    //Object.keys(closeDancers).sort();
+    //console.log(Object.keys(closeDancers));
+    var n = 3;
+    if (n > Object.keys(closeDancers).length) {
+      n = Object.keys(closeDancers).length;
+    }
+    for (var j = 0; j < n; j++) {
+      var key = Object.keys(closeDancers)[j];
+      console.log(key);
+      console.log( closeDancers[key].$node);
+      closeDancers[key].$node.toggle();
+    }
+  });
+
+  // $('.blinkyDancer').mouseover(function(){
+  //     $('.blinkyDancer').css("max-width", "20%");
+  //   });
+
 
 });
 

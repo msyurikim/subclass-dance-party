@@ -19,4 +19,16 @@ BlinkyDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   this.$node.toggle();
+  this.enlarge();
+
 };
+
+BlinkyDancer.prototype.enlarge = function() {
+  this.$node.mouseenter(function() {
+    this.$node.css("max-width", "20%");
+  }.bind(this));
+  this.$node.mouseout(function() {
+    this.$node.css("max-width", "7%");
+  }.bind(this));
+};
+

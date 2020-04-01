@@ -1,8 +1,6 @@
 var FadingDancer = function(top, left, timeBetweenSteps) {
   var node = $('<img class="fadingDancer" src="hula-girl.png" alt="hula-girl"></img>');
   Dancer.call(this, top, left, timeBetweenSteps, node);
-
-  //this.$node = $('<span class="dancer, fadingDancer"></span>');
 };
 
 FadingDancer.prototype = Object.create(Dancer.prototype);

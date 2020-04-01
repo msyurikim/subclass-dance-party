@@ -3,12 +3,13 @@ body, html{
 }
 body{
   margin: 0px;
-  /*
-  background-color:#444;
-  */
-  background-image: url(dance-floor-bright.jpg);
-  background-position: center;
+
+  background: url(dance-floor-bright.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -35,7 +36,7 @@ button{
 }
 
 img {
-  max-width: 10%;
+  max-width: 7%;
 }
 
 .dancer{
